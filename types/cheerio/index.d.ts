@@ -11,8 +11,6 @@
 //                 Trevor Reed <https://github.com/trevorhreed>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-/// <reference types="node" />
-
 declare type AttrFunction = (el: CheerioElement, i: number, currentValue: string) => any;
 
 interface Cheerio {
@@ -293,7 +291,7 @@ interface CheerioElement {
 }
 
 interface CheerioAPI extends CheerioSelector, CheerioStatic {
-    load(html: string | Buffer, options?: CheerioOptionsInterface): CheerioStatic;
+    load(html: string, options?: CheerioOptionsInterface): CheerioStatic;
     load(element: CheerioElement, options?: CheerioOptionsInterface): CheerioStatic;
 }
 
@@ -301,6 +299,4 @@ interface Document {}
 
 declare const cheerio: CheerioAPI;
 
-declare module 'cheerio' {
-    export = cheerio;
-}
+export = cheerio;

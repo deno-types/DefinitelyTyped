@@ -483,7 +483,7 @@ declare namespace jest {
             readonly BOLD_WEIGHT: MatcherColorFn;
             readonly DIM_COLOR: MatcherColorFn;
             readonly SUGGEST_TO_CONTAIN_EQUAL: string;
-            diff(a: any, b: any, options?: import("jest-diff").DiffOptions): string | null;
+            diff(a: any, b: any, options?: any): string | null;
             ensureActualIsNumber(actual: any, matcherName: string, options?: MatcherHintOptions): void;
             ensureExpectedIsNumber(actual: any, matcherName: string, options?: MatcherHintOptions): void;
             ensureNoExpected(actual: any, matcherName: string, options?: MatcherHintOptions): void;
@@ -536,8 +536,6 @@ declare namespace jest {
         pass: boolean;
         message: () => string;
     }
-
-    type SnapshotSerializerPlugin = import('pretty-format').Plugin;
 
     interface InverseAsymmetricMatchers {
         /**
@@ -652,7 +650,7 @@ declare namespace jest {
         /**
          * Adds a module to format application-specific data structures for serialization.
          */
-        addSnapshotSerializer(serializer: SnapshotSerializerPlugin): void;
+        addSnapshotSerializer(serializer: any): void;
         /**
          * Matches any object that recursively matches the provided keys.
          * This is often handy in conjunction with other asymmetric matchers.
